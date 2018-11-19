@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="box">
+		<!-- {{msg}}
+		<div v-html = "msg"></div>
+		<div :title="two">呵呵</div>
+		<input type="checkbox" :checked="flag">
+		<input type="checkbox" v-model="flag">
+		<input type="text" maxlength="20" v-model="msg">  还可以输入{{20-two.length}} -->
+		<input type="number" v-model="width">
+		<input type="number" v-model="height" name=""><br>
+		<input type="color" v-model="bg">
+		<div class="color" v-bind:style="
+		{background:bg,width:width+'px',height:height+'px'}">aaaa</div>
+		<br>
+		<br><br>
+		<input type="range" min="0" max="255" v-model="r">
+		<input type="range" min="0" max="255" v-model="g">
+		<input type="range" min="0" max="255" v-model="b">
+		<div class="color" v-bind:style="{background:'rgb('+r+','+g+','+b+')',width:width+'px',height:height+'px'}">aaaa</div>
+	</div>
+	<script>
+		var vm = new Vue({
+			el:"#box",
+			data:{
+				// msg:"hello world",
+				// two:"hehe",
+				// flag:true,
+				width:200,
+				height:200,
+				r:0,
+				g:0,
+				b:0,
+				bg:'#ccc'
+			},
+			//template:"<p>{{two}}</p>"
+		})
+	</script>
+</body>
+</html>
